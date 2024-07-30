@@ -23,8 +23,10 @@ a {
 }
 
 .hero {
+  position: relative;
   padding-top: 80px;
   margin-bottom: 40px;
+  overflow: hidden;
 }
 
 .hero--inner {
@@ -63,6 +65,23 @@ a {
   gap: 12px;
   align-items: center;
   justify-content: center;
+}
+
+.grid--pic--left {
+  position: absolute;
+  top: 80px;
+  right: 50%;
+  z-index: -1;
+  margin-right: 28px;
+  max-width: 100%;
+}
+.grid--pic--right {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  z-index: -1;
+  margin-left: 28px;
+  max-width: 100%;
 }
 
 .link--touch {
@@ -244,7 +263,6 @@ a {
   border: 1px solid #dfe1e6;
   box-shadow: 0px 1px 2px 0px #0d0d120f;
   border-radius: 16px;
-  opacity: 0px;
   gap: 16px;
 }
 
@@ -272,7 +290,6 @@ a {
   padding: 32px;
   border-radius: 24px;
   border: 1px solid #dfe1e7;
-  opacity: 0px;
   box-shadow: 0px 4px 8px -1px #0d0d1205;
 }
 
@@ -329,13 +346,14 @@ a {
   border-radius: 14px;
   border: 1px solid #dfe1e7;
   box-shadow: 0px 1px 2px 0px #0d0d120f;
-  opacity: 0px;
 }
 
 .footer {
+  position: relative;
   max-width: 100%;
   background-color: #0d0d12;
   padding: 104px 0px;
+  overflow: hidden;
 }
 
 .footer--wrapper {
@@ -376,8 +394,11 @@ a {
   background-color: #272835;
   box-shadow: 0px 4px 8px -1px #0d0d1205;
   box-shadow: 0px 5px 10px -2px #0d0d120a;
-
-  opacity: 0px;
+}
+.footer--grid {
+  position: absolute;
+  top: 0;
+  max-width: 100%;
 }
 
 @media screen and (max-width: 769px) {
@@ -408,6 +429,16 @@ a {
     display: flex;
     flex-direction: column;
     gap: 24px;
+  }
+
+  .grid--pic--left {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 0;
+  }
+  .grid--pic--right {
+    display: none;
   }
   .link--touch {
     width: 327px;
@@ -473,10 +504,11 @@ a {
     display: block;
     border-radius: 16px;
   }
+
   .footer {
     padding: 40px 0px;
   }
-}
-
-@media screen and (min-width: 992px) {
+  .footer--grid {
+    display: none;
+  }
 }
